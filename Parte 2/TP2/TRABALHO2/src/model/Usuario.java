@@ -2,7 +2,7 @@ package model;
 import java.io.*;
 
 public class Usuario implements RegistroUsuario {
-    private int id;
+    private int id; // PK
     private String nome;
     private String[] telefone;
     private String email;

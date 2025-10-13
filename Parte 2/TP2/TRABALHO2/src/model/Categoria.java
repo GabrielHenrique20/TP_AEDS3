@@ -2,7 +2,7 @@ package model;
 import java.io.*;
 
 public class Categoria implements RegistroCategoria {
-    private int id;
+    private int id; // PK
     private String nome;
 
     // Construtores

@@ -3,8 +3,8 @@ import java.io.*;
 import java.time.LocalDate;
 
 public class Viagem implements Registro {
-    private int id;
-    private int idUsuario; 
+    private int id; // PK
+    private int idUsuario;  // FK: Usuario -> 1:N Viagem
     private String destino;
     private float orcamento;
     private LocalDate data_inicio;

@@ -3,7 +3,7 @@ import java.io.*;
 import java.time.LocalDate;
 
 public class Atividade implements RegistroAtividade {
-    private int id;
+    private int id; // PK
     private int idCategoria; // FK: Categoria -> 1:N Atividade
     private String titulo;
     private String descricao;
