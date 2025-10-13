@@ -17,8 +17,6 @@ O projeto implementa um **sistema de gerenciamento de viagens**, permitindo o **
 
 Cada entidade possui seu próprio conjunto de dados armazenados em arquivos, e o sistema utiliza **estruturas de dados avançadas** para otimizar o acesso e a busca das informações, como **Árvore B+**.  
 
-A aplicação simula um ambiente de banco de dados simplificado, onde cada registro é controlado e indexado manualmente.
-
 ---
 
 ## 📁 Estrutura do Projeto
@@ -37,3 +35,81 @@ A aplicação simula um ambiente de banco de dados simplificado, onde cada regis
 │ ├── Buscar*.java # Classes de busca de registros
 │ └──
 ```
+---
+
+## 🚀 Como Executar
+
+### 🧩 Usando uma IDE (recomendado)
+
+1. **Abra o projeto** em uma IDE Java (Eclipse ou VS Code com extensão Java).  
+2. **Compile** o projeto.  
+3. **Execute** a classe principal:
+
+```
+src/views/Principal.java
+```
+
+4. Siga as instruções exibidas no menu principal do programa.
+
+---
+
+## ⚙️ Tecnologias e Conceitos Utilizados
+
+- **Linguagem:** Java  
+- **Paradigma:** Programação Orientada a Objetos  
+- **Arquitetura:** MVC (Model-View-Controller) e DAO.
+- **Estruturas de dados implementadas:**
+- Árvore B+  
+- ParIntInt
+
+Essas estruturas são utilizadas para otimizar o armazenamento e busca dos registros do sistema (usuários, viagens, atividades, categorias).
+
+---
+
+## 👌 Funcionalidades
+
+- Cadastro, listagem, edição, remoção e relação de:
+- Usuários  
+- Viagens  
+- Categorias  
+- Atividades  
+
+- Relacionamentos 1:N entre entidades (por exemplo: usuários e viagens, categorias e atividades).  
+- Utilização de estruturas de dados avançadas para indexação e busca eficiente.  
+
+---
+
+## 📚 Organização
+
+- O pacote `aeds3` contém as estruturas de dados implementadas pelo professor Kutova.
+- O pacote `controller` contém os menus e opções de interação com o usuário.
+- O pacote `dao` realiza a comunicação entre os modelos e os arquivos de dados.
+- O pacote `model` constitui-se das classes das entidades e seus respectivos registros.
+- O pacore `views` contém a presença da classe Principal do código.
+- As 4 classes `Buscar`. são responsáveis pela busca dos registros existentes.
+
+---
+
+## 🧠 Objetivo do Trabalho
+
+Implementar uma aplicação em Java que utilize **estruturas de dados complexas** (Árvore B+) para gerenciar registros de forma eficiente, simulando um sistema de viagens.
+
+---
+
+## 📄 Informações
+
+Para uso acadêmico. Trabalho prático desenvolvido para fins educacionais na disciplina de **Algoritmos e Estruturas de Dados III**, pela PUC MINAS Coração Eucarístico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
