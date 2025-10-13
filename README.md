@@ -69,10 +69,12 @@ Essas estruturas são utilizadas para otimizar o armazenamento e busca dos regis
 ## 👌 Funcionalidades
 
 - Cadastro, listagem, edição, remoção e relação de:
+```
 - Usuários  
 - Viagens  
 - Categorias  
 - Atividades  
+```
 
 - Relacionamentos 1:N entre entidades (por exemplo: usuários e viagens, categorias e atividades).  
 - Utilização de estruturas de dados avançadas para indexação e busca eficiente.  
