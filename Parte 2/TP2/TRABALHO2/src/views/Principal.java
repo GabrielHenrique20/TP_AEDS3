@@ -15,10 +15,10 @@ public class Principal {
                 System.out.println("\n\nAEDsIII");
                 System.out.println("-------");
                 System.out.println("> Início");
-                System.out.println("1 - Inserir Viagem");
-                System.out.println("2 - Inserir Atividade");
-                System.out.println("3 - Inserir Usuário");
-                System.out.println("4 - Inserir Categoria");
+                System.out.println("1 - ESCOLHA: Viagem");
+                System.out.println("2 - ESCOLHA: Atividade");
+                System.out.println("3 - ESCOLHA: Usuário");
+                System.out.println("4 - ESCOLHA: Categoria");
                 System.out.println("0 - Sair");
 
                 System.out.print("\nOpção: ");
