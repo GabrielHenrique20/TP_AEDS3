@@ -102,7 +102,7 @@ Implementar uma aplicação em Java que utilize **estruturas de dados complexas*
 
 Para uso acadêmico. Trabalho prático desenvolvido para fins educacionais na disciplina de **Algoritmos e Estruturas de Dados III**, pela PUC MINAS Coração Eucarístico.
 
-Outras informações, como implementações, estruturas e lógica do código, estão respondidas e presentes no PDF de respostas elaborado pelo professor Walisson Ferreira de Carvalho.
+Outras informações, como implementações, estruturas e lógica do código, estão respondidas e presentes no PDF de respostas elaborado pelo professor Walisson Ferreira de Carvalho, na pasta Parte 2.
 
 
 
