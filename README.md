@@ -27,7 +27,7 @@ Cada entidade possui seu próprio conjunto de dados armazenados em arquivos, e o
 
 ```
 ├── src/
-│ ├── aeds3/ # Estruturas de dados (Árvore B+)
+│ ├── aeds3/ # Estruturas de dados (Árvore B+ e a classe importante,ParIntInt)
 │ ├── controller/ # Menus e controle de navegação
 │ ├── dao/ # Classes de persistência (DAO)
 │ ├── model/ # Classes de modelo (Usuario, Viagem, Atividade, Categoria)
