@@ -42,8 +42,9 @@ Cada entidade possui seu próprio conjunto de dados armazenados em arquivos, e o
 ### 🧩 Usando uma IDE (recomendado)
 
 1. **Abra o projeto** em uma IDE Java (Eclipse ou VS Code com extensão Java).  
-2. **Compile** o projeto.  
-3. **Execute** a classe principal:
+2. **Baixe e instale** o JDK no seu computador
+3. **Compile** o projeto.  
+4. **Execute** a classe principal:
 
 ```
 src/views/Principal.java
