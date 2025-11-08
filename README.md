@@ -13,44 +13,70 @@ Projeto desenvolvido na disciplina de *Algoritmos e Estruturas de Dados III*.
 
 ## 📝 Descrição do Projeto
 
-O projeto implementa um **sistema de gerenciamento de viagens**, permitindo o **cadastro, consulta, edição e remoção** de **usuários, viagens, categorias e atividades**.  
+O projeto implementa um **sistema de gerenciamento de viagens**, permitindo o **cadastro, consulta, edição e remoção** de **usuários, viagens, categorias e atividades**, além de relacionamentos entre essas entidades.  
 
-Cada entidade possui seu próprio conjunto de dados armazenados em arquivos, e o sistema utiliza **estruturas de dados avançadas** para otimizar o acesso e a busca das informações, como **Árvore B+**.  
+Cada entidade possui seu próprio conjunto de dados armazenados em arquivos, e o sistema utiliza **estruturas de dados avançadas** para otimizar o acesso e a busca das informações, como **Árvore B+**.
+
+A partir das atualizações mais recentes, o sistema passou a suportar um relacionamento N:N entre Viagem e Atividade, permitindo vincular múltiplas atividades a diferentes viagens, com controle de **status, prioridade, e listagens bidirecionais**.
 
 ---
 
 ## 📁 Estrutura do Projeto
 1. O usuário inicia o programa (classe `Principal.java`).  
-2. É exibido um menu com opções de gerenciamento (Usuário, Viagem, Categoria, Atividade).  
+2. É exibido um menu com opções de gerenciamento (Usuário, Viagem, Categoria, Atividade e Vínculos Viagem–Atividade (N:N)).  
 3. O usuário pode **adicionar**, **editar**, **buscar**, **remover** ou **listar** registros.  
-4. As informações são salvas e recuperadas utilizando as estruturas implementadas.
+4. Os dados são persistidos em arquivos binários, utilizando cabeçalho e lápide para controle de integridade..
 
 ```
-├── src/
-│ ├── aeds3/ # Estruturas de dados (Árvore B+ e a classe importante,ParIntInt)
-│ ├── controller/ # Menus e controle de navegação
-│ ├── dao/ # Classes de persistência (DAO)
-│ ├── model/ # Classes de modelo (Usuario, Viagem, Atividade, Categoria)
-│ ├── views/ # Classe Principal.java
-│ ├── Buscar*.java # Classes de busca de registros
-│ └──
+├── SistemaViagens/
+│   ├── src/
+│   │   ├── aeds3/          # Estruturas de dados (Árvore B+ e ParIntInt)
+│   │   ├── controller/     # Menus e controle de navegação
+│   │   ├── dao/            # Classes de persistência (DAO)
+│   │   ├── model/          # Classes de modelo (Usuario, Viagem, Atividade, Categoria, RelViagemAtividade)
+│   │   ├── views/          # Classe Principal.java
+│   │   └── Buscar*.java    # Classes auxiliares de busca
+│   └── dados/              # Arquivos de dados gerados durante a execução
+
 ```
 ---
 
 ## 🚀 Como Executar
 
-### 🧩 Usando uma IDE (recomendado)
+### 🪟 **Ambiente Windows (recomendado)**
 
-1. **Abra o projeto** em uma IDE Java (Eclipse ou VS Code com extensão Java).  
-2. **Baixe e instale** o JDK no seu computador
-3. **Compile** o projeto.  
-4. **Execute** a classe principal:
+1. **Instale o JDK** (Java Development Kit).  
+2. **Abra o projeto em uma IDE Java**, como VS Code (com a extensão Java) ou Eclipse.
+3. **Compile o projeto** e execute a classe principal:
 
 ```
 src/views/Principal.java
 ```
+4. O menu principal será exibido no console. Basta seguir as opções para gerenciar os registros.
 
-4. Siga as instruções exibidas no menu principal do programa.
+---
+
+### 🐧 **Ambiente Linux**
+
+1. Abra o terminal na pasta raiz do projeto **(onde estão as pastas dados/ e SistemaViagens/)**.
+2. Navegue até o diretório de código-fonte:
+
+```
+cd SistemaViagens/src
+```
+
+3. Compile o código-fonte:
+
+```
+javac views/Principal.java
+```
+
+4. Execute a aplicação:
+
+```
+java views.Principal
+```
+O menu principal será exibido no terminal, permitindo todas as operações CRUD e o gerenciamento dos vínculos N:N entre viagens e atividades.
 
 ---
 
@@ -62,8 +88,8 @@ src/views/Principal.java
 - **Estruturas de dados implementadas:**
 - Árvore B+  
 - ParIntInt
-
-Essas estruturas são utilizadas para otimizar o armazenamento e busca dos registros do sistema (usuários, viagens, atividades, categorias).
+- **Persistência:** arquivos binários com cabeçalho e lápide
+- **Relacionamentos:** 1:N (Usuário–Viagem, Categoria–Atividade) e N:N (Viagem–Atividade) com controle de unicidade, índices B+, e atributos adicionais (status e prioridade)
 
 ---
 
@@ -71,39 +97,40 @@ Essas estruturas são utilizadas para otimizar o armazenamento e busca dos regis
 
 - Cadastro, listagem, edição, remoção e relação de:
 ```
-- Usuários  
-- Viagens  
-- Categorias  
-- Atividades  
+- Usuários
+- Viagens
+- Categorias
+- Atividades
+- Relações Viagem–Atividade (N:N)
 ```
-
-- Relacionamentos 1:N entre entidades (por exemplo: usuários e viagens, categorias e atividades).  
-- Utilização de estruturas de dados avançadas para indexação e busca eficiente.  
+# **Relacionamentos:**  
+- 1:N e N:N com integridade referencial manual (remoção em cascata)
+- Índices B+ bidirecionais para busca eficiente
+- Atualização de status e prioridade nos vínculos
 
 ---
 
 ## 📚 Organização
 
 - O pacote `aeds3` contém as estruturas de dados implementadas pelo professor Kutova.
-- O pacote `controller` contém os menus e opções de interação com o usuário.
-- O pacote `dao` realiza a comunicação entre os modelos e os arquivos de dados.
-- O pacote `model` constitui-se das classes das entidades e seus respectivos registros.
-- O pacore `views` contém a presença da classe Principal do código.
+- O pacote `controller` contém os Menus e lógica de navegação do sistema.
+- O pacote `dao` realiza a persistência e controle dos arquivos de dados (com índices B+).
+- O pacote `model` constitui-se das Entidades principais e tabela intermediária (RelViagemAtividade).
+- O pacore `views` contém classe Principal.java (ponto de entrada da aplicação).
 - As 4 classes `Buscar`. são responsáveis pela busca dos registros existentes.
 
 ---
 
 ## 🧠 Objetivo do Trabalho
 
-Implementar uma aplicação em Java que utilize **estruturas de dados complexas** (Árvore B+) para gerenciar registros de forma eficiente, simulando um sistema de viagens.
+Implementar uma aplicação em Java que utilize estruturas de dados complexas (Árvore B+) para gerenciar registros e relacionamentos entre entidades, simulando um sistema de viagens completo e eficiente.
 
 ---
 
 ## 📄 Informações
 
-Para uso acadêmico. Trabalho prático desenvolvido para fins educacionais na disciplina de **Algoritmos e Estruturas de Dados III**, pela PUC MINAS Coração Eucarístico.
+Projeto acadêmico desenvolvido para a disciplina Algoritmos e Estruturas de Dados III – PUC Minas Coração Eucarístico.
 
-Outras informações, como implementações, estruturas e lógica do código, estão respondidas e presentes no PDF de respostas elaborado pelo professor Walisson Ferreira de Carvalho, na pasta Parte 2.
 
 
 
