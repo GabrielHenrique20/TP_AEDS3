@@ -95,7 +95,7 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 
 ## 👌 Funcionalidades
 
-- Cadastro, listagem, edição, remoção e relação de:
+- Cadastro, listagem, edição, remoção e vínculo de:
 ```
 - Usuários
 - Viagens
