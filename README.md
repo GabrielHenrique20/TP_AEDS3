@@ -104,16 +104,16 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 - Relações Viagem–Atividade (N:N)
 ```
 # **Relacionamentos:**  
-- 1:N e N:N com integridade referencial manual (remoção em cascata)
-- Índices B+ bidirecionais para busca eficiente
-- Atualização de status e prioridade nos vínculos
+- 1:N e N:N com integridade referencial manual (remoção em cascata).
+- Índices B+ bidirecionais para busca eficiente.
+- Atualização de status e prioridade nos vínculos.
 
 ---
 
 ## 📚 Organização
 
 - O pacote `aeds3` contém as estruturas de dados implementadas pelo professor Kutova.
-- O pacote `controller` contém os Menus e lógica de navegação do sistema.
+- O pacote `controller` contém os menus e lógica de navegação do sistema.
 - O pacote `dao` realiza a persistência e controle dos arquivos de dados (com índices B+).
 - O pacote `model` constitui-se das Entidades principais e tabela intermediária (RelViagemAtividade).
 - O pacore `views` contém classe Principal.java (ponto de entrada da aplicação).
