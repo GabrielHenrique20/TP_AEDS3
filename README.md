@@ -17,7 +17,7 @@ O projeto implementa um **sistema de gerenciamento de viagens**, permitindo o **
 
 Cada entidade possui seu próprio conjunto de dados armazenados em arquivos, e o sistema utiliza **estruturas de dados avançadas** para otimizar o acesso e a busca das informações, como **Árvore B+**.
 
-A partir das atualizações mais recentes, o sistema passou a suportar um relacionamento N:N entre Viagem e Atividade, permitindo vincular múltiplas atividades a diferentes viagens, com controle de **status, prioridade, e listagens bidirecionais**.
+A partir das atualizações mais recentes, o sistema passou a suportar um relacionamento N:N entre Viagem e Atividade, permitindo vincular múltiplas atividades a diferentes viagens, com controle de **status, prioridade, e listagens**.
 
 ---
 
