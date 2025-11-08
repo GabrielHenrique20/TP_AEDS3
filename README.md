@@ -89,7 +89,7 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 - Árvore B+  
 - ParIntInt
 - **Persistência:** arquivos binários com cabeçalho e lápide
-- **Relacionamentos:** 1:N (Usuário–Viagem, Categoria–Atividade) e N:N (Viagem–Atividade) com controle de unicidade, índices B+, e atributos adicionais (status e prioridade)
+- **Relacionamentos:** 1:N (Usuário–Viagem, Categoria–Atividade) e N:N (Viagem–Atividade) com controle dos índices B+ e atributos adicionais (status e prioridade).
 
 ---
 
