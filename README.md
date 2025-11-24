@@ -97,21 +97,21 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 - **Linguagem:** Java  
 - **Paradigma:** Programação Orientada a Objetos  
 - **Arquitetura:** MVC (Model-View-Controller) e DAO.
-- **Estruturas de dados implementadas:**
--- Árvore B+  
--- ParIntInt
-- **Algoritmos de compactação:**
---Huffman
---LZW
---VetorDeBits
---Classe Backup para criação e restauração de backups compactados
--**Criptografia:**
---RSA aplicado ao campo e-mail do Usuario
---E-mail armazenado cifrado em arquivo e decifrado ao exibir os dados no CRUD
+# **Estruturas de dados implementadas:**
+- Árvore B+  
+- ParIntInt
+# **Algoritmos de compactação:**
+- Huffman
+- LZW
+- VetorDeBits
+- Classe Backup para criação e restauração de backups compactados
+# **Criptografia:**
+- RSA aplicado ao campo e-mail do Usuario
+- E-mail armazenado cifrado em arquivo e decifrado ao exibir os dados no CRUD
 - **Persistência:** Arquivos binários com cabeçalho (controle do último ID) e lápide (exclusão lógica)
-- **Relacionamentos:** 
---1:N (Usuário–Viagem, Categoria–Atividade)
---N:N (Viagem–Atividade) com controle dos índices B+ e atributos adicionais (status e prioridade).
+# **Relacionamentos:** 
+- 1:N (Usuário–Viagem, Categoria–Atividade)
+- N:N (Viagem–Atividade) com controle dos índices B+ e atributos adicionais (status e prioridade).
 
 ---
 
@@ -128,7 +128,7 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 ```
 # **Relacionamentos:**  
 - 1:N e N:N com integridade referencial manual (remoção em cascata).
-- Índices B+ bidirecionais para busca eficiente.
+- Índices B+ para busca eficiente.
 - Atualização de status e prioridade nos vínculos.
 
 # **Backup e Compactação:**
