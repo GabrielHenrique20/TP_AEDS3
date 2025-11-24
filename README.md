@@ -123,14 +123,13 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 
 ## 👌 Funcionalidades
 
-- Cadastro, listagem, edição, remoção e vínculo de:
+- Cadastro, listagem, edição, remoção, vínculo e backup de:
 ```
 - Usuários
 - Viagens
 - Categorias
 - Atividades
 - Relações Viagem–Atividade (N:N)
-- Compactação/Descompactação
 ```
 # **Relacionamentos:**  
 - 1:N e N:N com integridade referencial manual (remoção em cascata).
