@@ -22,6 +22,7 @@ Com as atualizações mais recentes, o sistema passou a suportar:
 - Um **relacionamento N:N entre Viagem e Atividade**, permitindo vincular múltiplas atividades a diferentes viagens, com controle de **status, prioridade e listagens bidirecionais**.
 - Um módulo de **backup e compactação** dos dados, utilizando algoritmos de **Huffman** e **LZW**, apoiados pela classe `VetorDeBits` e pela classe `Backup`.
 - Um mecanismo de **criptografia RSA** aplicado automaticamente ao campo **e-mail** da entidade `Usuario`, garantindo maior segurança de dados sensíveis.
+- Um módulo de **casamento de padrões** no campo **destino** das viagens, permitindo buscas por substring utilizando os algoritmos **KMP** e **Boyer–Moore**, escolhidos pelo usuário no menu.
 
 ---
 
@@ -29,18 +30,19 @@ Com as atualizações mais recentes, o sistema passou a suportar:
 1. O usuário inicia o programa (classe `Principal.java`).  
 2. É exibido um menu com opções de gerenciamento:
    - Usuário  
-   - Viagem  
+   - Viagem ( **Busca por padrão no destino** (KMP / Boyer–Moore))
    - Categoria  
    - Atividade  
    - Vínculos Viagem–Atividade (N:N)  
-   - **Backup / Compactação** (gera e restaura backups comprimidos)
-3. O usuário pode **adicionar**, **editar**, **buscar**, **remover**, **listar**, **vincular** registros e **realizar backups compactados**.  
+   - Backup / Compactação (gera e restaura backups comprimidos)
+3. O usuário pode **adicionar**, **editar**, **buscar**, **remover**, **listar**, **vincular** registros, **realizar backups compactados** e **pesquisar viagens por padrão no destino**.
 4. Os dados são persistidos em arquivos binários, utilizando **cabeçalho e lápide** para controle de integridade.
 
 ```
 ├── SistemaViagens/
 │   ├── src/
 │   │   ├── aeds3/          # Estruturas de dados (Árvore B+, ParIntInt)
+|   |   ├── casamento/      # Algoritmos de casamento de padrões (KMP, Boyer–Moore)
 │   │   ├── compactacao/    # Algoritmos de compactação (Huffman, LZW, classe Backup e Vetor de Bits)
 │   │   ├── controller/     # Menus e controle de navegação
 │   │   ├── criptografia/   # Implementação do RSA e manipulação de chaves
@@ -88,7 +90,7 @@ javac views/Principal.java
 ```
 java views.Principal
 ```
-O menu principal será exibido no terminal, permitindo todas as operações CRUD e o gerenciamento dos vínculos N:N entre viagens e atividades.
+O menu principal será exibido no terminal, permitindo todas as operações CRUD, o gerenciamento dos vínculos N:N entre viagens e atividades, o uso do módulo de backup/compactação e a busca por padrão no destino usando KMP ou Boyer–Moore.
 
 ---
 
@@ -119,6 +121,11 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 - 1:N (Usuário–Viagem, Categoria–Atividade)
 - N:N (Viagem–Atividade) com controle dos índices B+ e atributos adicionais (status e prioridade).
 
+### **Casamento de padrões:**
+- Algoritmo KMP (Knuth–Morris–Pratt)
+- Algoritmo Boyer–Moore (lógica de bad character)
+- Integração com o menu de viagens para busca por padrão no campo destino, permitindo ao usuário escolher qual algoritmo utilizar.
+
 ---
 
 ## 👌 Funcionalidades
@@ -145,11 +152,17 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 - Criptografia RSA aplicada ao e-mail do usuário.
 - Armazenamento seguro do e-mail em disco.
 - Descriptografia transparente ao consultar ou listar usuários.
+
+# **Casamento de padrões:**
+- Opção de buscar viagens por padrão no destino.
+- Usuário escolhe entre KMP ou Boyer–Moore no menu.
+- Implementação integrada ao fluxo de leitura das viagens (via DAO), sem alterar a persistência dos arquivos.
 ---
 
 ## 📚 Organização
 
 - O pacote `aeds3` contém as estruturas de dados implementadas pelo professor Kutova.
+- O pacote `casamento` contém os algoritmos de casamento de padrões (KMP e Boyer–Moore).
 - O pacote `compactacao` implementa os algoritmos de compactação (Huffman, LZW, Backup e VetorDeBits).
 - O pacote `controller` contém os menus e lógica de navegação do sistema.
 - O pacote `criptografia` implementa a criptografia RSA e manipulação de chaves.
@@ -162,25 +175,10 @@ O menu principal será exibido no terminal, permitindo todas as operações CRUD
 
 ## 🧠 Objetivo do Trabalho
 
-Implementar uma aplicação em Java que utilize estruturas de dados complexas (Árvore B+), algoritmos de compactação (Huffman, LZW) e criptografia RSA para gerenciar registros e relacionamentos entre entidades, simulando um sistema de viagens completo, eficiente e com foco em armazenamento, desempenho e segurança.
+Implementar uma aplicação em Java que utilize estruturas de dados complexas (Árvore B+), algoritmos de compactação (Huffman, LZW), criptografia RSA e algoritmos de casamento de padrões (KMP e Boyer–Moore) para gerenciar registros e relacionamentos entre entidades, simulando um sistema de viagens completo, eficiente e com foco em armazenamento, desempenho, segurança e buscas textuais.
 
 ---
 
 ## 📄 Informações
 
 Projeto acadêmico desenvolvido para a disciplina Algoritmos e Estruturas de Dados III – PUC Minas Coração Eucarístico.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
